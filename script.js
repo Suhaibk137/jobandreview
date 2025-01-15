@@ -8,7 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if feedback was already submitted
     if (localStorage.getItem('feedbackSubmitted') === 'true') {
-        form.innerHTML = '<div class="already-submitted">You have already submitted feedback. Thank you for your response!</div>';
+        form.innerHTML = `
+            <div class="already-submitted">
+                You have already submitted feedback. Thank you for your response!
+                <div class="job-assistance">
+                    <p>Looking for career growth? 🚀</p>
+                    <a href="http://www.eliteresumes.co" target="_blank" class="job-link">Check out Our Job Assistance Program</a>
+                </div>
+            </div>`;
         return;
     }
 
@@ -117,7 +124,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Replace form with submitted message
                     setTimeout(() => {
-                        form.innerHTML = '<div class="already-submitted">You have already submitted feedback. Thank you for your response!</div>';
+                        form.innerHTML = `
+                            <div class="already-submitted">
+                                You have already submitted feedback. Thank you for your response!
+                                <div class="job-assistance">
+                                    <p>Looking for career growth? 🚀</p>
+                                    <a href="http://www.eliteresumes.co" target="_blank" class="job-link">Check out Our Job Assistance Program</a>
+                                </div>
+                            </div>`;
                         successMessage.classList.add('hidden');
                     }, 3000);
                 })
