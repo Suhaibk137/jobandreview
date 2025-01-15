@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Google Sheet submission URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzEOxCH9Z2AQMUDJskSj2SCeHJIb4n5RPJg9cPH-ZggR94lBB643_sGcFw3htVtvbZI/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx6G2RKKJvTFVWmQ8rSGyMtvM8DtDlnrM7B0q-ypQulenCtr4AeQmekSSicF4qFP-am/exec';
 
     // Star Rating Functionality
     starRating.addEventListener('click', function(e) {
