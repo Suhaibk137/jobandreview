@@ -1,0 +1,110 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Feedback Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <img src="logo.png" alt="Company Logo" id="company-logo">
+        </div>
+
+        <form id="feedbackForm">
+            <h1>Client Feedback Form</h1>
+            <!-- Hidden Date Field -->
+            <input type="hidden" id="submissionDate" name="submissionDate">
+
+            <!-- Name Input -->
+            <div class="form-group">
+                <label for="name">Your Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="nameError"></span>
+            </div>
+
+            <!-- HR Selection -->
+            <div class="form-group">
+                <label for="hr">Name of the HR <span class="required">*</span></label>
+                <select id="hr" name="hr" required>
+                    <option value="">Select HR Representative</option>
+                    <option value="Shafeela">Shafeela</option>
+                    <option value="Greeshma">Greeshma</option>
+                    <option value="Sumayya">Sumayya</option>
+                    <option value="Priya Pillai">Priya Pillai</option>
+                    <option value="Sandra">Sandra</option>
+                    <option value="Elizabeth">Elizabeth</option>
+                    <option value="Nisha">Nisha</option>
+                    <option value="Nasla">Nasla</option>
+                    <option value="other">Other</option>
+                </select>
+                <span class="error-message" id="hrError"></span>
+            </div>
+
+            <!-- Star Rating -->
+            <div class="form-group">
+                <label>Overall Satisfaction <span class="required">*</span></label>
+                <div class="star-rating" id="starRating">
+                    <i class="fas fa-star" data-rating="1"></i>
+                    <i class="fas fa-star" data-rating="2"></i>
+                    <i class="fas fa-star" data-rating="3"></i>
+                    <i class="fas fa-star" data-rating="4"></i>
+                    <i class="fas fa-star" data-rating="5"></i>
+                </div>
+                <input type="hidden" name="satisfaction" id="satisfactionRating" required>
+                <span class="error-message" id="ratingError"></span>
+            </div>
+
+            <!-- Improvement Suggestions -->
+            <div class="form-group">
+                <label for="suggestions">Improvement Suggestions</label>
+                <textarea id="suggestions" name="suggestions"></textarea>
+            </div>
+
+            <!-- Additional Comments -->
+            <div class="form-group">
+                <label for="comments">Additional Comments</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <!-- Likelihood to Recommend -->
+            <div class="form-group">
+                <label>Likelihood to Recommend</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="hundred" name="likelihood" value="100%">
+                        <label for="hundred">100%</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="maybe" name="likelihood" value="Maybe">
+                        <label for="maybe">Maybe</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="never" name="likelihood" value="Never">
+                        <label for="never">Never</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" id="submitButton">Submit Feedback</button>
+        </form>
+
+        <!-- Loading Spinner (Hidden by default) -->
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Submitting your feedback...</p>
+        </div>
+
+        <!-- Success Message (Hidden by default) -->
+        <div id="successMessage" class="success-message hidden">
+            Thank you for your feedback! Your response has been submitted successfully.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
