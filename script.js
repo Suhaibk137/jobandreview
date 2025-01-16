@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('feedbackSubmitted') === 'true') {
         form.innerHTML = `
             <div class="already-submitted">
-                You have already submitted feedback. Thank you for your response!
+                Thank you for your response!
                 <div class="job-assistance">
                     <p>Looking for career growth? 🚀</p>
                     <a href="http://www.eliteresumes.co" target="_blank" class="job-link">Check out Our Job Assistance Program</a>
@@ -45,12 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form Validation and Submission
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Check if already submitted
-        if (localStorage.getItem('feedbackSubmitted') === 'true') {
-            alert('You have already submitted feedback. Thank you!');
-            return;
-        }
         
         // Reset error messages
         clearErrors();
@@ -100,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     try {
                         response = JSON.parse(text);
                     } catch (e) {
-                        // If response isn't JSON, treat as success for backward compatibility
                         response = { status: 'success' };
                     }
 
@@ -117,23 +110,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     loadingSpinner.classList.add('hidden');
                     successMessage.classList.remove('hidden');
                     
-                    // Reset form
-                    form.reset();
-                    Array.from(stars).forEach(star => star.classList.remove('active'));
-                    satisfactionRating.value = '';
+                    // Replace form with submitted message immediately
+                    form.innerHTML = `
+                        <div class="already-submitted">
+                            Thank you for your response!
+                            <div class="job-assistance">
+                                <p>Looking for career growth? 🚀</p>
+                                <a href="http://www.eliteresumes.co" target="_blank" class="job-link">Check out Our Job Assistance Program</a>
+                            </div>
+                        </div>`;
                     
-                    // Replace form with submitted message
+                    // Hide success message after 1 second
                     setTimeout(() => {
-                        form.innerHTML = `
-                            <div class="already-submitted">
-                                You have already submitted feedback. Thank you for your response!
-                                <div class="job-assistance">
-                                    <p>Looking for career growth? 🚀</p>
-                                    <a href="http://www.eliteresumes.co" target="_blank" class="job-link">Check out Our Job Assistance Program</a>
-                                </div>
-                            </div>`;
                         successMessage.classList.add('hidden');
-                    }, 3000);
+                    }, 1000);
                 })
                 .catch(error => {
                     console.error('Error!', error.message);
