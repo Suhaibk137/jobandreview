@@ -178,16 +178,19 @@ button[type="submit"]:hover {
     font-size: 1.1rem;
     margin: 2rem 0;
 }
-/* Job Assistance Styles */
+/* Update job assistance styles to work in both contexts */
 .job-assistance {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #e5e7eb;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: center;
 }
 
 .job-assistance p {
     color: #4b5563;
     margin-bottom: 0.75rem;
+    font-size: 1.1rem;
 }
 
 .job-link {
