@@ -20,38 +20,14 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo-section {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
 .logo-container {
-    margin-bottom: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 #company-logo {
     max-width: 120px;
     height: auto;
-}
-
-.job-assistance-top {
-    margin-top: 1.5rem;
-}
-
-.job-assistance-top .job-link {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #0066cc;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: background-color 0.2s;
-    font-size: 1.1rem;
-}
-
-.job-assistance-top .job-link:hover {
-    background-color: #0052a3;
 }
 
 h1 {
@@ -132,10 +108,42 @@ textarea {
 .success-message {
     background-color: #d4edda;
     color: #155724;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 4px;
     margin-top: 1rem;
     text-align: center;
+}
+
+.success-message p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.success-message .job-assistance {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #c3e6cb;
+}
+
+.success-message .job-assistance p {
+    color: #155724;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.success-message .job-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.success-message .job-link:hover {
+    background-color: #0052a3;
 }
 
 .hidden {
@@ -183,17 +191,6 @@ button[type="submit"]:hover {
 .loading-spinner p {
     color: #666;
     font-size: 1rem;
-}
-
-/* Already Submitted Message */
-.already-submitted {
-    text-align: center;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    color: #666;
-    font-size: 1.1rem;
-    margin: 2rem 0;
 }
 
 /* Responsive Design */
