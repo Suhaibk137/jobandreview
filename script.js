@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if feedback was already submitted
     if (localStorage.getItem('feedbackSubmitted') === 'true') {
+        form.style.display = 'none';
         form.innerHTML = `
             <div class="already-submitted">
                 Thank you for your response!
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="http://www.eliteresumes.co" target="_blank" class="job-link">Check out Our Job Assistance Program</a>
                 </div>
             </div>`;
+        form.style.display = 'block';
         return;
     }
 
@@ -106,24 +108,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Mark as submitted in localStorage
                     localStorage.setItem('feedbackSubmitted', 'true');
                     
-                    // Hide loading spinner and show success message
+                    // Hide loading spinner
                     loadingSpinner.classList.add('hidden');
-                    successMessage.classList.remove('hidden');
                     
-                    // Replace form with submitted message immediately
-                    form.innerHTML = `
-                        <div class="already-submitted">
-                            Thank you for your response!
-                            <div class="job-assistance">
-                                <p>Looking for career growth? 🚀</p>
-                                <a href="http://www.eliteresumes.co" target="_blank" class="job-link">Check out Our Job Assistance Program</a>
-                            </div>
+                    // Show success message
+                    successMessage.innerHTML = `
+                        <p>Thank you for your feedback! Your response has been submitted successfully.</p>
+                        <div class="job-assistance">
+                            <p>Looking for career growth? 🚀</p>
+                            <a href="http://www.eliteresumes.co" target="_blank" class="job-link">Check out Our Job Assistance Program</a>
                         </div>`;
-                    
-                    // Hide success message after 1 second
-                    setTimeout(() => {
-                        successMessage.classList.add('hidden');
-                    }, 1000);
+                    successMessage.classList.remove('hidden');
                 })
                 .catch(error => {
                     console.error('Error!', error.message);
